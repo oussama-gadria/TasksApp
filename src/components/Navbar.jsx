@@ -1,7 +1,7 @@
 function Navbar() {
     return (
      <>
-      <h1 style={{textAlign:"center"}}>Tasks App</h1>
+      <h1 className="text-center">Tasks App</h1>
     </> );
 }
 

@@ -1,12 +1,13 @@
 import './App.css';
-import Tasks from './components/tasks';
+import Tasks from "./components/Tasks";
 
 
 function App() {
-  return (<>
-  <Tasks></Tasks>
-  </>
-  );
+    return (<div className="container">
+
+            <Tasks/>
+
+        </div>);
 }
 
 export default App;
