@@ -1,5 +1,5 @@
 import { Button } from "react-bootstrap";
-function SubmitButtonForm() {
+function SubmitButton() {
   return (
       <Button variant="primary" type="submit">
         Submit
@@ -7,4 +7,4 @@ function SubmitButtonForm() {
   );
 }
 
-export default SubmitButtonForm;
+export default SubmitButton;
