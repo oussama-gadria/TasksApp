@@ -8,7 +8,10 @@ import {Route, Routes} from "react-router-dom";
 import MainNav from "./MainNav";
 import AddTask from "./AddTask";
 
+const inputLabels = ["title", "description", "status"]
+
 const Tasks = () => {
+
     const [tasks, setTasks] = useState(Task);
     const [deletedId, setDeletedId] = useState("");
     const [updateTask, setUpdateTask] = useState({
@@ -28,42 +31,42 @@ const Tasks = () => {
     const onEdit = (id) => {
         const task = tasks.filter((task) => task.id === id);
         setUpdateTask(task[0]);
-        console.log(task[0])
     };
     return (<>
-            <MainNav/>
-            <Routes>
-                <Route
-                    path="/"
-                    element={<TaskDetails
-                        tasks={tasks}
-                        setTasks={setTasks}
-                        onDelete={onDelete}
-                        onEdit={onEdit}
-                    />}
-                />
-                <Route
-                    path="/addTask"
-                    element={<AddTask
-                        tasks={tasks}
-                        setTasks={setTasks}
-                        updateTask={updateTask}
-                        setUpdateTask={updateUserTask}
-                    />}
-                ></Route>
-                <Route
-                    path="/editTask"
-                    element={<EditTask
-                        tasks={tasks}
-                        setTasks={setTasks}
-                        deletedId={deletedId}
-                        updateTask={updateTask}
-                        setUpdateTask={updateUserTask}
-                    />}
-                ></Route>
-            </Routes>
-            <ModalDelete tasks={tasks} deletedId={deletedId} setTasks={setTasks}/>
-            <Footer/>
-        </>);
+        <MainNav/>
+        <Routes>
+            <Route
+                path="/"
+                element={<TaskDetails
+                    tasks={tasks}
+                    setTasks={setTasks}
+                    onDelete={onDelete}
+                    onEdit={onEdit}
+                />}
+            />
+            <Route
+                path="/addTask"
+                element={<AddTask
+                    inputLabels={inputLabels}
+                    tasks={tasks}
+                    setTasks={setTasks}
+                    setUpdateTask={updateUserTask}
+                />}
+            ></Route>
+            <Route
+                path="/editTask"
+                element={<EditTask
+                    inputLabels={inputLabels}
+                    tasks={tasks}
+                    setTasks={setTasks}
+                    deletedId={deletedId}
+                    updateTask={updateTask}
+                    setUpdateTask={updateUserTask}
+                />}
+            ></Route>
+        </Routes>
+        <ModalDelete tasks={tasks} deletedId={deletedId} setTasks={setTasks}/>
+        <Footer/>
+    </>);
 };
 export default Tasks;
