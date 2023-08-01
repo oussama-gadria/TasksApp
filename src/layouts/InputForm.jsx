@@ -1,15 +1,15 @@
 import { Form } from "react-bootstrap";
-function InputForm(props) {
+function InputForm({input,valueTask,updateTask,setEditTaskForm,setAddTaskForm}) {
   return (
     <>
       <Form>
         <Form.Group className="mb-3">
-          <Form.Label>{props.input}</Form.Label>
+          <Form.Label>{input}</Form.Label>
           <Form.Control
             type="text"
-            placeholder={props.input}
-            value={props.valueTask}
-            onChange={props.updateTask.title !== "" ?(e) => props.setEditTaskForm(props.input, e.target.value) :(e) => props.setAddTaskForm(props.input, e.target.value) }
+            placeholder={input}
+            value={valueTask}
+            onChange={updateTask.title !== "" ?(e) => setEditTaskForm(input, e.target.value) :(e) => setAddTaskForm(input, e.target.value) }
           />
         </Form.Group>
       </Form>

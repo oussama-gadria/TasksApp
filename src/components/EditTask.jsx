@@ -1,5 +1,6 @@
-import ButtonForm from "../layouts/ButtonForm";
+import SubmitButtonForm from "../layouts/SubmitButtonForm";
 import InputForm from "../layouts/InputForm";
+import ReturnButton from "../layouts/ReturnButton";
 
 var defaultTask = {
   id: null,
@@ -32,7 +33,8 @@ function EditTask({ updateTask, tasks, setTasks, setUpdateTask }) {
             setEditTaskForm={setUpdateTask}
           />
         ))}
-        <ButtonForm />
+        <SubmitButtonForm />
+        <ReturnButton/>
       </form>
     </>
   );

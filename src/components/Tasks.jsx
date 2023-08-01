@@ -1,7 +1,7 @@
 import TaskDetails from "./TaskDetails";
 import Footer from "./Footer";
 import EditTask from "./EditTask";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Task from "../tasks.json";
 import ModalDelete from "../layouts/ModalDelete";
 import { Route, Routes } from "react-router-dom";

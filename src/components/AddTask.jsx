@@ -1,6 +1,7 @@
 import { useState } from "react";
 import InputForm from "../layouts/InputForm";
-import ButtonForm from "../layouts/ButtonForm";
+import SubmitButtonForm from "../layouts/SubmitButtonForm";
+import ReturnButton from "../layouts/ReturnButton";
 var defaultTask = {
   id: null,
   title: "",
@@ -9,7 +10,7 @@ var defaultTask = {
   createdDate: null,
 };
 
-function AddTask({updateTask, tasks, setTasks, setUpdateTask, setAddTask}) {
+function AddTask({updateTask, tasks, setTasks,setUpdateTask}) {
   const [userTask, setUserTask] = useState(defaultTask);
   const inputs = ["title", "description", "status"];
   const handleSubmit = (event) => {
@@ -33,7 +34,8 @@ function AddTask({updateTask, tasks, setTasks, setUpdateTask, setAddTask}) {
         {inputs.map((input) => (
           <InputForm key={input} input={input}  setAddTaskForm={setAddTaskForm} updateTask={updateTask} />
         ))}
-        <ButtonForm />
+        <SubmitButtonForm/>
+        <ReturnButton/>
       </form>
     </>
   );
